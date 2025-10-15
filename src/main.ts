@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import setupPlugins from "@/plugins";
+import setupPlugins from "@/plugins"; //通过 setupPlugins 注册全局插件
 
 // 暗黑主题样式
 import "element-plus/theme-chalk/dark/css-vars.css";
@@ -18,5 +18,5 @@ import "default-passive-events";
 
 const app = createApp(App);
 // 注册插件
-app.use(setupPlugins);
-app.mount("#app");
+app.use(setupPlugins); // 注册全局插件
+app.mount("#app"); // 挂载应用

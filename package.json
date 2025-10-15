@@ -1,7 +1,7 @@
 {
   "name": "差分隐私保护系统",
   "description": "基于差分隐私保护的目标状态估计",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -123,7 +123,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "repository": "https://gitee.com/youlaiorg/vue3-element-admin.git",
-  "author": "有来开源组织",
+  "repository": "https://github.com/Wanderingss/Privacy-Protection.git",
+  "author": "wandering",
   "license": "MIT"
 }

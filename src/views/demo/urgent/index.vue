@@ -206,7 +206,7 @@
           <div class="save-actions">
             <el-button type="success" class="save-btn">
               <el-icon class="mr-1">
-                <Monitor />
+                <Pointer />
               </el-icon>
               保存分析配置
             </el-button>
@@ -281,7 +281,6 @@
 
 <script setup>
 import { ref, computed, watch } from "vue";
-import { Clock, Upload, Document, Monitor, Edit } from "@element-plus/icons-vue";
 
 // 权重参数
 const cpuWeight = ref(0.3);

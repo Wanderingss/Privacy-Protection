@@ -1,7 +1,7 @@
 import type { App } from "vue";
 import { createRouter, createWebHashHistory, type RouteRecordRaw } from "vue-router";
 
-export const Layout = () => import("@/layouts/index.vue");
+export const Layout = () => import("@/layouts/index.vue"); // 路由懒加载，只有当该组件被实际需要时（如访问对应路由），才会加载
 
 // 静态路由
 export const constantRoutes: RouteRecordRaw[] = [

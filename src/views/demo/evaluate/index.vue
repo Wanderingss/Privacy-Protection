@@ -4,7 +4,7 @@
     <el-header class="header">
       <div class="logo">数据传输潜力评估系统</div>
       <div class="header-actions">
-        <el-button icon="Refresh" circle size="small" class="reset-btn" @click="handleReset">
+        <el-button icon="Refresh" size="small" class="reset-btn" @click="handleReset">
           <span class="btn-text">重置</span>
         </el-button>
         <el-button
@@ -232,9 +232,7 @@
                   </div>
 
                   <el-button type="primary" class="start-analysis-btn" @click="handleRunAnalysis">
-                    <el-icon>
-                      <Monitor />
-                    </el-icon>
+                    <el-icon class="mr-1"><Select /></el-icon>
                     开始分析向导
                   </el-button>
                 </div>
@@ -447,7 +445,6 @@
 
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from "vue";
-import { ArrowUp, Download, Monitor, WarningFilled, InfoFilled } from "@element-plus/icons-vue";
 import { ElMessage, ElDialog } from "element-plus";
 
 // 状态变量
@@ -749,7 +746,7 @@ onMounted(() => {
   display: flex;
   gap: 5px;
   align-items: center;
-  background-color: #334155;
+  background-color: #c8d8bb;
 }
 
 .run-btn {
@@ -855,8 +852,7 @@ onMounted(() => {
 
 .upload-btn {
   flex: 1;
-  background-color: #334155;
-  border-color: #334155;
+  background-color: #91a1b8;
 }
 
 .generate-btn {

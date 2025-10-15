@@ -14,11 +14,13 @@
 
         <div class="status-actions">
           <el-button type="default" size="small" @click="handleRefresh">
-            <Refresh class="mr-1" />
+            <el-icon class="mr-1" :size="18">
+              <Refresh />
+            </el-icon>
             刷新
           </el-button>
           <el-button type="default" size="small" @click="handleExport">
-            <Download class="mr-1" />
+            <el-icon :size="18" class="mr-1"><Download /></el-icon>
             导出
           </el-button>
         </div>
@@ -28,7 +30,7 @@
       <el-card class="content-card" :body-style="{ padding: '20px' }">
         <div class="card-header">
           <el-icon class="header-icon">
-            <MapLocation />
+            <MapLocation class="mr-1" />
           </el-icon>
           <h2 class="card-title">节点选择</h2>
         </div>
@@ -64,7 +66,7 @@
       <el-card class="content-card" :body-style="{ padding: '20px' }">
         <div class="card-header">
           <el-icon class="header-icon">
-            <Monitor />
+            <Aim class="mr-1" />
           </el-icon>
           <h2 class="card-title">采集配置</h2>
         </div>
@@ -160,7 +162,7 @@
       <el-card class="content-card" :body-style="{ padding: '20px' }">
         <div class="card-header">
           <el-icon class="header-icon">
-            <Monitor />
+            <Grid class="mr-1" />
           </el-icon>
           <h2 class="card-title">数据处理配置</h2>
         </div>
@@ -249,7 +251,7 @@
       <el-card class="content-card" :body-style="{ padding: '20px' }">
         <div class="card-header">
           <el-icon class="header-icon">
-            <Monitor />
+            <Reading class="mr-1" />
           </el-icon>
           <h2 class="card-title">采集任务控制</h2>
         </div>
@@ -327,7 +329,7 @@
         <div class="task-actions">
           <el-button type="default" size="small" @click="saveConfig">保存配置</el-button>
           <el-button type="primary" size="small" @click="startCollection">
-            <Monitor class="mr-1" />
+            <el-icon class="mr-1" :size="18"><VideoPlay /></el-icon>
             启动采集
           </el-button>
         </div>
@@ -337,7 +339,7 @@
       <el-card class="content-card" :body-style="{ padding: '20px' }">
         <div class="card-header">
           <el-icon class="header-icon">
-            <Monitor />
+            <View class="mr-1" />
           </el-icon>
           <h2 class="card-title">数据分析结果预览</h2>
         </div>
@@ -368,7 +370,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { Monitor, Refresh, Download, MapLocation } from "@element-plus/icons-vue";
 import { ElMessage } from "element-plus";
 
 // 状态数据
@@ -557,7 +558,7 @@ onMounted(() => {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #0f0101;
 }
 
 .header-right {
@@ -581,13 +582,6 @@ onMounted(() => {
   gap: 8px;
   align-items: center;
   cursor: pointer;
-}
-
-.user-avatar {
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  color: #fff;
 }
 
 .user-name {
@@ -768,7 +762,7 @@ onMounted(() => {
 .el-collapse-item__header {
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #0f0101;
 }
 
 .processing-node-card {
