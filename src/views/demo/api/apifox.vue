@@ -1,20 +1,19 @@
 <!-- 接口文档 -->
 <template>
   <el-card>
-          <template #header>
-            <div class="flex-x-between">
-              <span>   </span>
-              <el-radio-group v-model="visitTrendDateRange" size="small">
-                <el-radio-button :value=0>隐私保护</el-radio-button>
-                <el-radio-button :value=1>状态估计</el-radio-button>
-                <el-radio-button :value=2>对比</el-radio-button>
-              </el-radio-group>
-            </div>
-          </template>
-          <ECharts :options="visitTrendChartOptions" height="900px" />
-        </el-card>
+    <template #header>
+      <div class="flex-x-between">
+        <span></span>
+        <el-radio-group v-model="visitTrendDateRange" size="small">
+          <el-radio-button :value="0">隐私保护</el-radio-button>
+          <el-radio-button :value="1">状态估计</el-radio-button>
+          <el-radio-button :value="2">对比</el-radio-button>
+        </el-radio-group>
+      </div>
+    </template>
+    <ECharts :options="visitTrendChartOptions" height="900px" />
+  </el-card>
 </template>
-
 
 <script setup lang="ts">
 defineOptions({
@@ -22,15 +21,15 @@ defineOptions({
   inheritAttrs: false,
 });
 
-  import { dayjs } from "element-plus";
-  import LogAPI, { VisitTrendVO } from "@/api/system/log.api";
+import { dayjs } from "element-plus";
+import LogAPI, { VisitTrendVO } from "@/api/system/log.api";
 
-  // 访问趋势日期范围（单位：天）
-  const visitTrendDateRange = ref(0);
-  // 访问趋势图表配置
-  const visitTrendChartOptions = ref();
+// 访问趋势日期范围（单位：天）
+const visitTrendDateRange = ref(0);
+// 访问趋势图表配置
+const visitTrendChartOptions = ref();
 
-  /**
+/**
  * 更新访问趋势图表的配置项
  *
  * @param data - 访问趋势数据
@@ -106,20 +105,20 @@ const fetchVisitTrendData = () => {
     .subtract(visitTrendDateRange.value - 1, "day")
     .toDate();
   const endDate = new Date();
-  switch(visitTrendDateRange.value){
+  switch (visitTrendDateRange.value) {
     case 0: {
       LogAPI.getVisitCount({
-      startDate: dayjs(startDate).format("YYYY-MM-DD"),
-      endDate: dayjs(endDate).format("YYYY-MM-DD"),
+        startDate: dayjs(startDate).format("YYYY-MM-DD"),
+        endDate: dayjs(endDate).format("YYYY-MM-DD"),
       }).then((data) => {
-      updateVisitTrendChartOptions(data);
+        updateVisitTrendChartOptions(data);
       });
       break;
     }
     case 1: {
       LogAPI.getVisitCount1({
-      startDate: dayjs(startDate).format("YYYY-MM-DD"),
-      endDate: dayjs(endDate).format("YYYY-MM-DD"),
+        startDate: dayjs(startDate).format("YYYY-MM-DD"),
+        endDate: dayjs(endDate).format("YYYY-MM-DD"),
       }).then((data) => {
         updateVisitTrendChartOptions(data);
       });
@@ -127,15 +126,14 @@ const fetchVisitTrendData = () => {
     }
     case 2: {
       LogAPI.getVisitCount2({
-      startDate: dayjs(startDate).format("YYYY-MM-DD"),
-      endDate: dayjs(endDate).format("YYYY-MM-DD"),
+        startDate: dayjs(startDate).format("YYYY-MM-DD"),
+        endDate: dayjs(endDate).format("YYYY-MM-DD"),
       }).then((data) => {
         updateVisitTrendChartOptions(data);
       });
       break;
     }
   }
-  
 };
 
 // 监听访问趋势日期范围的变化，重新获取趋势数据
@@ -147,6 +145,4 @@ watch(
   { immediate: true }
 );
 </script>
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
