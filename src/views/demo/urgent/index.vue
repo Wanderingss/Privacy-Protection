@@ -341,7 +341,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #0e0101;
+  color: var(--menu-text);
 }
 
 .card-desc {
@@ -356,7 +356,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
 }
 
 .history-btn {
-  color: #01060e;
+  color: var(--menu-text);
   border-color: #4e5969;
 }
 
@@ -397,7 +397,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 500;
-  color: #0c0101;
+  color: var(--menu-text);
 }
 
 .model-meta {
@@ -427,7 +427,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
   margin: 0 0 20px 0;
   font-size: 16px;
   font-weight: 500;
-  color: #080000;
+  color: var(--menu-text);
   border-bottom: 1px solid #4e5969;
 }
 
@@ -453,7 +453,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
 }
 
 .weight-input {
-  color: #01060f;
+  color: var(--menu-text);
   text-align: center;
   background-color: #1d2129;
   border-color: #4e5969;
@@ -489,13 +489,13 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
 
 .scope-select {
   width: 100%;
-  color: #02060e;
+  color: var(--menu-text);
   border-color: #4e5969;
 }
 
 .threshold-input {
   width: 100%;
-  color: #01040a;
+  color: var(--menu-text);
   background-color: #1d2129;
   border-color: #4e5969;
 }
@@ -548,7 +548,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
   margin-bottom: 12px;
   font-size: 16px;
   font-weight: 500;
-  color: #080000;
+  color: var(--menu-text);
 }
 
 .view-btn,
@@ -569,7 +569,7 @@ watch([cpuWeight, memoryWeight, networkWeight, batteryWeight], updateSum);
 
 .option-checkbox {
   font-size: 14px;
-  color: #0c111a;
+  color: var(--menu-text);
 }
 
 .el-checkbox__input.is-checked .el-checkbox__inner {

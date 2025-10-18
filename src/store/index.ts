@@ -8,6 +8,7 @@ export function setupStore(app: App<Element>) {
   app.use(store);
 }
 
+// export * from "./modules/xxx" 表示将 ./modules 目录下各 Store 模块的所有导出内容（如 useAppStore、useUserStore 等）重新导出。
 export * from "./modules/app.store";
 export * from "./modules/permission.store";
 export * from "./modules/settings.store";

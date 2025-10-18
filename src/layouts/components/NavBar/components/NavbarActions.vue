@@ -170,6 +170,7 @@ function handleSettingsClick() {
     }
 
     // 确保 Element Plus 组件可以正常工作
+    //:deep() 就起到了 “穿透” 作用，它会忽略 scoped 样式的属性限制，让内部的选择器能够匹配到子组件或深层嵌套的元素。
     :deep(.el-dropdown),
     :deep(.el-tooltip) {
       display: flex;
@@ -179,7 +180,7 @@ function handleSettingsClick() {
       height: 100%;
     }
 
-    // 图标样式
+    // 图标样式 ^= 表示 “前缀匹配”，即选中所有 class 属性值以 i-svg: 开头的元素。
     :deep([class^="i-svg:"]) {
       font-size: 18px;
       line-height: 1;

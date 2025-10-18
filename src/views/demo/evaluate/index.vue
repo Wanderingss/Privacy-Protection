@@ -1,49 +1,6 @@
 <template>
   <el-card>
-    <!-- 顶部导航栏 -->
-    <el-header class="header">
-      <div class="logo">数据传输潜力评估系统</div>
-      <div class="header-actions">
-        <el-button icon="Refresh" size="small" class="reset-btn" @click="handleReset">
-          <span class="btn-text">重置</span>
-        </el-button>
-        <el-button
-          type="success"
-          icon="Monitor"
-          size="small"
-          class="run-btn"
-          @click="handleRunAnalysis"
-        >
-          <span class="btn-text">运行分析</span>
-        </el-button>
-      </div>
-    </el-header>
-
     <div class="main-content">
-      <!-- 左侧导航 -->
-      <el-aside class="sidebar">
-        <el-menu
-          default-active="1"
-          class="sidebar-menu"
-          text-color="#0f1733"
-          active-text-color="#ff1733"
-          :unique-opened="true"
-        >
-          <el-menu-item index="1" icon="Grid">
-            <span>矩阵配置</span>
-          </el-menu-item>
-          <el-menu-item index="2" icon="PieChart">
-            <span>评估结果</span>
-          </el-menu-item>
-          <el-menu-item index="3" icon="LineChart">
-            <span>历史数据</span>
-          </el-menu-item>
-          <el-menu-item index="4" icon="Setting" :disabled="isAnalyzing">
-            <span>系统设置</span>
-          </el-menu-item>
-        </el-menu>
-      </el-aside>
-
       <!-- 主内容区 -->
       <el-main class="main">
         <div class="main-grid">
@@ -659,24 +616,6 @@ function handleRunAnalysis() {
   }, 500);
 }
 
-// 处理重置
-function handleReset() {
-  if (isAnalyzing.value) {
-    ElMessage.warning("分析正在进行中，无法重置");
-    return;
-  }
-
-  // 重置状态
-  matrixData.value = [];
-  networkCentralityWeight.value = 60;
-  transmissionResourceWeight.value = 40;
-  resourceSource.value = "realtime";
-  analysisComplete.value = false;
-  progress.value = 0;
-
-  ElMessage.info("已重置所有配置");
-}
-
 // 根据资源使用率获取颜色
 function getResourceColor(value) {
   if (value > 70) return "#22c55e"; // 绿色
@@ -721,68 +660,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 0 20px;
-  border-bottom: 1px solid #334155;
-}
-
-.logo {
-  font-size: 18px;
-  font-weight: bold;
-  color: #0a0000;
-}
-
-.header-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.reset-btn,
-.run-btn {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  background-color: #c8d8bb;
-}
-
-.run-btn {
-  background-color: #10b981;
-}
-
-.btn-text {
-  display: none;
-
-  @media (min-width: 768px) {
-    display: inline;
-  }
-}
-
 .main-content {
   display: flex;
   flex: 1;
   overflow: hidden;
 }
-
-.sidebar {
-  width: 60px;
-  background-color: #0f1733;
-  border-right: 1px solid #334155;
-
-  @media (min-width: 768px) {
-    width: 200px;
-  }
-}
-
-.sidebar-menu {
-  height: 100%;
-  padding-top: 20px;
-  border-right: none;
-}
-
 .main {
   flex: 1;
   padding: 20px;
@@ -801,7 +683,7 @@ onMounted(() => {
 
 .config-card {
   margin-bottom: 20px;
-  color: #000307;
+  color: var(--menu-text);
   border: none;
 }
 
@@ -959,7 +841,7 @@ onMounted(() => {
 .result-card {
   height: 100%;
   min-height: 800px;
-  color: #00050a;
+  color: var(--menu-text);
   border: none;
 }
 

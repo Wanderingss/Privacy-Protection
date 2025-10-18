@@ -8,6 +8,7 @@ import { DeviceEnum } from "@/enums/settings/device.enum";
 import { SidebarStatus } from "@/enums/settings/layout.enum";
 
 export const useAppStore = defineStore("app", () => {
+  // useStorage 是 Pinia 提供的工具函数，用于将状态持久化到 localStorage（刷新页面后不丢失）。
   // 设备类型
   const device = useStorage("device", DeviceEnum.DESKTOP);
   // 布局大小
@@ -26,9 +27,12 @@ export const useAppStore = defineStore("app", () => {
 
   /**
    * 根据语言标识读取对应的语言包
+   * // 等价的传统判断写法
+     // language !== null && language !== undefined ? language.value : undefined;
    */
   const locale = computed(() => {
     if (language?.value == "en") {
+      // 用 ?. 的简洁写法
       return en;
     } else {
       return zhCn;

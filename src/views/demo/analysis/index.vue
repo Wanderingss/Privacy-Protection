@@ -700,7 +700,7 @@ onMounted(() => {
 
 .node-group-name {
   font-weight: 500;
-  color: #160303;
+  color: var(--menu-text);
 }
 
 .node-select-checkbox {
@@ -721,12 +721,12 @@ onMounted(() => {
 
 .el-form-item__label {
   font-size: 14px;
-  color: #020913;
+  color: var(--menu-text);
 }
 
 .form-control {
   width: 100%;
-  color: #010711;
+  color: var(--menu-text);
   border-color: #4e5969;
 }
 
@@ -762,7 +762,7 @@ onMounted(() => {
 .el-collapse-item__header {
   font-size: 14px;
   font-weight: 500;
-  color: #0f0101;
+  color: var(--menu-text);
 }
 
 .processing-node-card {
@@ -785,7 +785,7 @@ onMounted(() => {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
-  color: #160101;
+  color: var(--menu-text);
 }
 
 .task-controls {
@@ -811,7 +811,7 @@ onMounted(() => {
   margin-bottom: 16px;
   font-size: 14px;
   font-weight: 500;
-  color: #110202;
+  color: var(--menu-text);
 }
 
 .task-actions {
@@ -830,7 +830,7 @@ onMounted(() => {
   margin: 0 0 16px 0;
   font-size: 14px;
   font-weight: 500;
-  color: #0f0101;
+  color: var(--menu-text);
 }
 
 .chart-container {

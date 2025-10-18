@@ -66,8 +66,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           ElementPlusResolver({ importStyle: "sass" }),
         ],
         eslintrc: {
+          // 4. 生成 ESLint 配置（避免 ESLint 报“未定义”错误）
           enabled: false,
-          filepath: "./.eslintrc-auto-import.json",
+          filepath: "./.eslintrc-auto-import.json", // 生成的 ESLint 配置文件
           globalsPropValue: true,
         },
         vueTemplate: true,
